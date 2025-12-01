@@ -162,7 +162,7 @@ extension RFC_5646 {
 
             // Ensure all subtags were consumed
             guard index == subtags.count else {
-                throw RFC_5646.Error.invalidSubtagOrder(value)
+                throw RFC_5646.Error.invalidSubtagOrder(String(value))
             }
 
             // Build canonical form
