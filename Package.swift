@@ -40,10 +40,10 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-standards/swift-standards", from: "0.10.0"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.2"),
-        .package(url: "https://github.com/swift-standards/swift-iso-639", from: "0.2.1"),
-        .package(url: "https://github.com/swift-standards/swift-iso-3166", from: "0.2.1"),
-        .package(url: "https://github.com/swift-standards/swift-iso-15924", from: "0.1.1")
+        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.3"),
+        .package(url: "https://github.com/swift-standards/swift-iso-639", from: "0.2.2"),
+        .package(url: "https://github.com/swift-standards/swift-iso-3166", from: "0.2.2"),
+        .package(url: "https://github.com/swift-standards/swift-iso-15924", from: "0.1.2")
     ],
     targets: [
         .target(
