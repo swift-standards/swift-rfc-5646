@@ -137,8 +137,7 @@ extension RFC_5646 {
         // Collect extension values until next singleton or end
         while index < subtags.count,
           !Self.isExtensionSingleton(subtags[index]),
-          !Self.isPrivateUseSingleton(subtags[index])
-        {
+          !Self.isPrivateUseSingleton(subtags[index]) {
           extensionValues.append(subtags[index])
           index += 1
         }
