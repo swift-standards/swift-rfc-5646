@@ -20,9 +20,9 @@ extension PackageDescription.Target.Dependency {
     static let iso639: Self = .product(name: "ISO 639", package: "swift-iso-639")
     static let iso3166: Self = .product(name: "ISO 3166", package: "swift-iso-3166")
     static let iso15924: Self = .product(name: "ISO 15924", package: "swift-iso-15924")
-    static let standards: Self = .product(name: "Standards", package: "swift-standards")
+    static let standards: Self = .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions")
     static let incits_4_1986: Self = .product(name: "INCITS 4 1986", package: "swift-incits-4-1986")
-    static let standardsTestSupport: Self = .product(name: "StandardsTestSupport", package: "swift-standards")
+    static let standardsTestSupport: Self = .product(name: "Test Primitives", package: "swift-test-primitives")
 
     static let rfc5646: Self = .target(name: .rfc5646)
 }
@@ -39,11 +39,12 @@ let package = Package(
         .library(name: .rfc5646, targets: [.rfc5646])
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-standards", from: "0.10.0"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.3"),
-        .package(url: "https://github.com/swift-standards/swift-iso-639", from: "0.2.2"),
-        .package(url: "https://github.com/swift-standards/swift-iso-3166", from: "0.2.2"),
-        .package(url: "https://github.com/swift-standards/swift-iso-15924", from: "0.1.2")
+        .package(path: "../../swift-primitives/swift-standard-library-extensions"),
+        .package(path: "../../swift-primitives/swift-test-primitives"),
+        .package(path: "../swift-incits-4-1986"),
+        .package(path: "../swift-iso-639"),
+        .package(path: "../swift-iso-3166"),
+        .package(path: "../swift-iso-15924")
     ],
     targets: [
         .target(

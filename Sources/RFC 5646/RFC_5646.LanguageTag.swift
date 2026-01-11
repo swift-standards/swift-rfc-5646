@@ -7,7 +7,7 @@ import INCITS_4_1986
 import ISO_15924
 import ISO_3166
 import ISO_639
-import Standards
+import Standard_Library_Extensions
 
 extension RFC_5646 {
   /// Language tag per RFC 5646 (RFC 5646)

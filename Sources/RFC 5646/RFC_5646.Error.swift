@@ -3,7 +3,7 @@
 //
 // Error types for RFC 5646 validation
 
-import Standards
+import Standard_Library_Extensions
 
 extension RFC_5646 {
   /// Errors that can occur when parsing or validating RFC 5646 language tags

@@ -3,7 +3,7 @@
 //
 // Types for RFC 5646 language tags (BCP 47)
 
-import Standards
+import Standard_Library_Extensions
 
 /// RFC 5646: Tags for Identifying Languages (BCP 47)
 ///
