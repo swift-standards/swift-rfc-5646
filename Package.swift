@@ -36,11 +36,10 @@ let package = Package(
         .watchOS(.v26)
     ],
     products: [
-        .library(name: .rfc5646, targets: [.rfc5646])
+        .library(name: "RFC 5646", targets: ["RFC 5646"])
     ],
     dependencies: [
         .package(path: "../../swift-primitives/swift-standard-library-extensions"),
-        .package(path: "../../swift-primitives/swift-test-primitives"),
         .package(path: "../../swift-foundations/swift-ascii"),
         .package(path: "../swift-iso-639"),
         .package(path: "../swift-iso-3166"),
@@ -48,21 +47,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: .rfc5646,
+            name: "RFC 5646",
             dependencies: [
                 .standards,
                 .incits_4_1986,
                 .iso639,
                 .iso3166,
                 .iso15924
-            ]
-        ),
-        .testTarget(
-            name: .rfc5646Tests,
-            dependencies: [
-                .rfc5646,
-                .incits_4_1986,
-                .standardsTestSupport
             ]
         )
     ],
