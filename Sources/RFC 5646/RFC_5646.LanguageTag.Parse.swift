@@ -1,5 +1,5 @@
 //
-//  RFC_5646.Parse.LanguageTag.swift
+//  RFC_5646.LanguageTag.Parse.swift
 //  swift-rfc-5646
 //
 //  RFC 5646 language tag: subtag *("-" subtag)
@@ -7,7 +7,7 @@
 
 public import Parser_Primitives
 
-extension RFC_5646.Parse {
+extension RFC_5646.LanguageTag {
     /// Parses an RFC 5646 language tag.
     ///
     /// `langtag = language ["-" script] ["-" region] *("-" variant) *("-" extension) ["-" privateuse]`
@@ -16,18 +16,18 @@ extension RFC_5646.Parse {
     /// interpretation (which subtag is language vs script vs region) is
     /// left to the caller — BCP 47 uses subtag length and position to
     /// determine semantics.
-    public struct LanguageTag<Input: Collection.Slice.`Protocol`>: Sendable
+    public struct Parse<Input: Collection.Slice.`Protocol`>: Sendable
     where Input: Sendable, Input.Element == UInt8 {
         @inlinable
         public init() {}
     }
 }
 
-extension RFC_5646.Parse.LanguageTag {
+extension RFC_5646.LanguageTag.Parse {
     public typealias Output = [Input]
 }
 
-extension RFC_5646.Parse.LanguageTag: Parser.`Protocol` {
+extension RFC_5646.LanguageTag.Parse: Parser.`Protocol` {
     public typealias ParseOutput = Output
     public typealias Failure = Never
 
