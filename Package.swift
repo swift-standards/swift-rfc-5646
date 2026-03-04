@@ -45,7 +45,8 @@ let package = Package(
         .package(path: "../../swift-foundations/swift-ascii"),
         .package(path: "../swift-iso-639"),
         .package(path: "../swift-iso-3166"),
-        .package(path: "../swift-iso-15924")
+        .package(path: "../swift-iso-15924"),
+        .package(path: "../../swift-primitives/swift-parser-primitives")
     ],
     targets: [
         .target(
@@ -55,7 +56,8 @@ let package = Package(
                 .incits_4_1986,
                 .iso639,
                 .iso3166,
-                .iso15924
+                .iso15924,
+                .product(name: "Parser Primitives", package: "swift-parser-primitives")
             ]
         ),
         .testTarget(

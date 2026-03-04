@@ -4,9 +4,9 @@
 // Language tag type per RFC 5646
 
 import ASCII
-import ISO_15924
-import ISO_3166
-import ISO_639
+public import ISO_15924
+public import ISO_3166
+public import ISO_639
 import Standard_Library_Extensions
 
 extension RFC_5646 {
@@ -71,7 +71,7 @@ extension RFC_5646 {
     /// - Parameter value: Language tag string (e.g., "en-US")
     /// - Throws: `RFC_5646.Error` if invalid
     public init(_ value: some StringProtocol) throws(RFC_5646.Error) {
-      let trimmed = value.trimmingCharacters(in: .whitespaces)
+      let trimmed = String(value.trimming(where: { $0 == " " || $0 == "\t" }))
       guard !trimmed.isEmpty else {
         throw RFC_5646.Error.emptyTag
       }
@@ -395,12 +395,12 @@ extension RFC_5646.LanguageTag: CustomStringConvertible {
 // MARK: - Codable
 
 extension RFC_5646.LanguageTag: Codable {
-  public func encode(to encoder: Encoder) throws {
+  public func encode(to encoder: any Encoder) throws {
     var container = encoder.singleValueContainer()
     try container.encode(value)
   }
 
-  public init(from decoder: Decoder) throws {
+  public init(from decoder: any Decoder) throws {
     let container = try decoder.singleValueContainer()
     let string = try container.decode(String.self)
     try self.init(string)
